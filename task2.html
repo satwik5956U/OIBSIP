@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <style>
         h1,p{
             color:white;
@@ -16,6 +17,24 @@
             position:relative;
             width:30%;
             right:0px;
+        }
+        .rightpart{
+            position:absolute;
+            width:40%;
+            left :45%;
+            height:40%;
+        }
+        span{
+            color:blue;
+        }
+        .leftabs{
+            position: absolute;
+            left:60%;
+            width:30%;
+        }
+        .container{
+            display:flex;
+            height:200px;
         }
     </style>
 </head>
@@ -32,28 +51,34 @@
             </center>
     </header>
     <div style="background-color:white">
-        <center>
+        <div class="container">
+        
             <div class="aside">
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fprofoto.com%2Fint%2Fprofoto-stories%2Falbert-watson-steve-jobs&psig=AOvVaw3ENv7k7P_oCzV7tEAv1fs0&ust=1681061419829000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiX5_7nmv4CFQAAAAAdAAAAABAE"></img>
+                <img src="./stevepic.jpg" width="260px" height="260px"></img>
             </div>
+            <div class="leftabs">
             <h1>
                 Design is not just what it<br/>
                 looks like and feels like<br/>
                 Design is how it works
             </h1>
-        </center>
+        </div>
     </div>
     <center>
-        <h1>
-            Biography
-        </h1>
+    <h1 style="color:white; position:relative; top:34px;">
+        Biography
+    </h1>
+    </center>
+        <div class="rightpart">
         <p>
-            Steve paul "steve" jobs was an american information<br/> technology entrepreneur and inventer. He was the cofounder, chairman, and the ceo of apple inc<br/>, CEO and largest shareholder of pixar Animation studios
+            Steve paul "steve" jobs was an american information<br/> technology entrepreneur and inventer. He was the<br/> cofounder, chairman, and the ceo of apple inc, CEO and<br/> largest shareholder of pixar Animation studios;
+            and<br/> the founder, chairman, and CEO of NeXT Inc.Jobs is widely <br/>recognized as a pioneer of the microcomputer revolution <br/>of the 1970s, along with Apple co-founder Steve Wozniak.<br/>
+            "Creative entrepreneur" whose passion for perfection and <br/>ferocious drive revoltionized six industries:personal<br/> computers, animated movies, phones, tablet <br/>computing, and digital publishing
         </p>
-    </center>
-    <hr>
-    <center>
-        Made with &#63743; by jorge sanz
-    </center>
+        <hr>
+        <footer>
+            <p>Made with  <i class='fa fa-apple'></i>  by <span><u>jorge sanz</u></span></p>
+        </footer>
+    </div>
 </body>
 </html>
