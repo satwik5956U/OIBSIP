@@ -18,9 +18,9 @@
                 border-radius: 5px;
                 height: 70%;
                 color:black;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 3px 3px;
             }
             input[type=text]{
-                border: solid black 0.1px;
                 width:100%;
                 height:100%;
             }
@@ -34,6 +34,11 @@
                 top:10%;
                 right:35%;
                 background-color: gray;
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border-right-style:hidden ;
+                font-size: larger;
+                text-align: end;
             }
         </style>
     </head>
@@ -42,7 +47,7 @@
             <table align="center">
                 <tr>
                     <input class="innerinp" id="iinp" disabled/>
-                    <td colspan="4"><input type='text' style="background-color:gray" id="inp" disabled>
+                    <td colspan="5"><input type='text' style="background-color:gray" id="inp" disabled>
                         
                     
                     </input></td>
@@ -52,11 +57,15 @@
                         <input type="button" value="  (  " onclick="display('(')"/>
                     </td>
                     <td>
-                        <input type="button" value="CE" onclick="delee()"/>
-                    </td>
-                    <td>
                         <input type="button" value="  )  " onclick="display(')')"/>
                     </td>
+                    <td>
+                        <input type="button" value="ans" onclick="display('ANS')"/>
+                    </td>
+                    <td>
+                        <input type="button" value="CE" onclick="delee()"/>
+                    </td>
+                    
                     <td>
                         <input type="button" value="  C  " onclick="clearScreen()" />
                     </td>
@@ -72,7 +81,10 @@
                         <input type="button" value="  3  " onclick="display('3')"/>
                     </td>
                     <td>
-                        <input type="button" value="  +   " onclick="display('+')"/>
+                        <input type="button" value="  %  " onclick="display('%')"/>
+                    </td>
+                    <td>
+                        <input type="button" value="  ^  "; onclick="display('**')"/>
                     </td>
                 </tr>
                 <tr>
@@ -86,8 +98,12 @@
                         <input type="button" value="  6  " onclick="display('6')"/>
                     </td>
                     <td>
-                        <input type="button" value="  -   " onclick="display('-')"/>
+                        <input type="button" value="  x  " onclick="display('*')"/>
                     </td>
+                    <td>
+                        <input type="button" value=&#247; onclick="display('/')"/>
+                    </td>
+                    
                 </tr>
                 <tr>
                     <td>
@@ -100,7 +116,10 @@
                         <input type="button" value="  9  " onclick="display('9')"/>
                     </td>
                     <td>
-                        <input type="button" value="  *  " onclick="display('*')"/>
+                        <input type="button" value="  +   " onclick="display('+')"/>
+                    </td>
+                    <td>
+                        <input type="button" value="  -   " onclick="display('-')"/>
                     </td>
                 </tr>
                 <tr>
@@ -110,11 +129,8 @@
                     <td>
                         <input type="button" value="  0  " onclick="display('0')"/>
                     </td>
-                    <td>
-                        <input type="button" value="  =  " onclick="calculate()"/>
-                    </td>
-                    <td>
-                        <input type="button" value="  /   " onclick="display('/')"/>
+                    <td colspan="3">
+                        <input type="button" value="Enter" onclick="calculate()"/>
                     </td>
                 </tr>
             </table>
@@ -126,10 +142,21 @@
 
             }
             function display(value) {
-                document.getElementById("inp").value += value;
+                if(value==="ANS"){
+                    document.getElementById("inp").value="";
+                }
+                if(value==='radic'){
+                    document.getElementById("inp").value+='✓';
+                }
+                else{
+                    document.getElementById("inp").value += value;
+                }
             }
             function calculate() {
-                var p = document.getElementById("inp").value;
+                var pp=document.getElementById('inp').value;
+                pp=pp.replace('ANS',""+document.getElementById('iinp').value);
+                var p=pp;
+                console.log(p);
                 var q = eval(p);
                 document.getElementById("iinp").value = q;
             }
