@@ -144,9 +144,7 @@
             function display(value) {
                 if(value==="ANS"){
                     document.getElementById("inp").value="";
-                }
-                if(value==='radic'){
-                    document.getElementById("inp").value+='✓';
+                    document.getElementById("inp").value+="ANS";
                 }
                 else{
                     document.getElementById("inp").value += value;
@@ -156,7 +154,6 @@
                 var pp=document.getElementById('inp').value;
                 pp=pp.replace('ANS',""+document.getElementById('iinp').value);
                 var p=pp;
-                console.log(p);
                 var q = eval(p);
                 document.getElementById("iinp").value = q;
             }
